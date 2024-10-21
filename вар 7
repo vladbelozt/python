@@ -1,0 +1,24 @@
+#Задание1
+input_string = input("Введите произвольную строку: ")
+last_char = input_string[-1] if input_string else ''  
+result = last_char in ['я', 'и', 'е', 'ю']
+print(result)
+
+#Задание2
+a = float(input("Введите длину первой стороны: "))
+b = float(input("Введите длину второй стороны: "))
+c = float(input("Введите длину третьей стороны: "))
+can_form_triangle = (a > 0 and b > 0 and c > 0) and (a + b > c and a + c > b and b + c > a)
+print(can_form_triangle)
+
+#Задание3
+user = int(input())
+if user % 10 == 0 :
+    user = user ** 10
+elif user % 10 == 1 :
+    user = user / 3
+elif user % 10 == 2 :
+    user = user // 2
+else:
+    user = user ** 2
+print(user)
