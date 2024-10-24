@@ -1,75 +1,50 @@
-задание 1
-# Список имен
+#задание 1
 names = ["Richard", "Igor", "Jonathan", "Alice", "Mary", "Bonnie"]
-
-# Цикл для перебора имен
 for name in names:
     print(f"Hello {name}!")
-задание 2
-# Заданная фраза
+#задание2
 phrase = "I'm learning cycles."
-
-# Цикл для вывода фразы 10 раз
 for i in range(10):
     print(phrase)
-задание 3
-# Список остановок поезда
+#задание3
 stations = ["Малиновка", "Рябиновка", "Суслово", "Дрожжино", "Звягино"]
-
-# Цикл для перебора остановок
 for i in range(len(stations)):
-    # Проверяем, является ли текущая остановка последней
     if i == len(stations) - 1:
         print(f"Поезд на станции: {stations[i]} - Конечная!")
     else:
         print(f"Поезд на станции: {stations[i]}")
-задание 4
-# Список товаров
+#задание4
 shop = ["Laptop", "Smartphone", "Watch", "Tablet", "Headphones"]
-
-# Цикл для перебора товаров
 for item in shop:
     if item == "Laptop":
         print("I'm buying this.")
     else:
         print("I don't need it.")
-задание 5
-# Список задач на неделю
+#задание5
 tasks = ["Сдать проект (Важная)", "Сходить в магазин", "Позвонить врачу (Важная)", "Убраться в комнате", "Подготовить отчёт"]
-
-# Цикл для перебора задач с использованием enumerate
 for index, task in enumerate(tasks, start=1):
-    # Проверяем, является ли задача важной
     if "(Важная)" in task:
         print(f"{index}: {task} !")  
     else:
         print(f"{index}: {task}") 
-  задание 6
-  # Запрашиваем у пользователя, сколько чисел он хочет ввести
+#задание6
 count = int(input("Сколько чисел вы хотите ввести? "))
-
-# Создаем список для хранения чисел
 numbers = []
 total_sum = 0
-
-# Цикл для ввода чисел
 for _ in range(count):
-    number = float(input("Введите число: "))  # Позволяем вводить дробные числа
-    numbers.append(number)  # Добавляем число в список
-    total_sum += number  # Прибавляем число к общей сумме
-
-# Выводим результаты
+    number = float(input("Введите число: "))
+    numbers.append(number)
+    total_sum += number
 print("Список всех введённых чисел:", numbers)
 print("Сумма всех чисел:", total_sum)
-задание 7
+#задание7
 count = 1
 while count <= 10:
     print(f"Итерация: {count}")
-    count += 1  # Увеличиваем счётчик на 1
-задание 8
+    count += 1
+#задание8
 while True:
-    command = input("Введите команду (w, a, s, d или stop для выхода): ").strip().lower()
-
+    command = input("Введите команду (w, a, s, d или stop для выхода): ")
     if command == 'w':
         print("Персонаж идёт вперёд.")
     elif command == 'a':
@@ -80,26 +55,26 @@ while True:
         print("Персонаж идёт вправо.")
     elif command == 'stop':
         print("Программа остановлена.")
-        break  # Завершаем бесконечный цикл
+        break
     else:
         print("Неизвестная команда! Попробуйте снова.")
-  задание 9
-  while True:
+#задание9
+while True:
     number = int(input("Введите число от 1 до 9: "))
     
     if 1 <= number <= 9:
         print(f"Таблица умножения для {number}:")
-        for i in range(1, 11):  # Умножаем от 1 до 10
+        for i in range(1, 11): 
             print(f"{number} x {i} = {number * i}")
-        break  # Выходим из цикла, если число валидно
+        break
     else:
         print("Число вне диапазона. Пожалуйста, введите число снова.")
-  задание 10
-  secret_answer = "яблоко"  # Загадка
+#задание10
+secret_answer = "яблоко"
 attempts = 3
 
 while attempts > 0:
-    answer = input("Угадайте загадку: Какой фрукт красный и растёт на дереве? ").strip().lower()
+    answer = input("Угадайте загадку: Какой фрукт красный и растёт на дереве? ")
 
     if answer == secret_answer:
         print("Поздравляем! Вы угадали!")
