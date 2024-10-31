@@ -1,0 +1,83 @@
+# Задача 1
+
+minutes = int(input())
+hours = minutes // 60
+remaining_minutes = minutes % 60
+print(hours)
+print(remaining_minutes)
+
+
+# Задача 2
+
+a = int(input("Введите минимальное количество часов: "))
+b = int(input("Введите максимальное количество часов: "))
+h = int(input("Введите текущее количество часов сна: "))
+
+if h < a:
+    print("Недосып")
+elif h > b:
+    print("Пересып")
+else:
+    print("Это нормально")
+
+
+# Задача 3
+
+import math
+
+a = float(input("Введите первую сторону: "))
+b = float(input("Введите вторую сторону: "))
+c = float(input("Введите третью сторону: "))
+
+s = (a + b + c) / 2
+area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+print(area)
+
+
+# Задача 4
+
+figure_type = input("Введите тип фигуры (треугольник, прямоугольник, круг): ")
+
+if figure_type == "треугольник":
+    a = float(input("Введите сторону a: "))
+    b = float(input("Введите сторону b: "))
+    c = float(input("Введите сторону c: "))
+    s = (a + b + c) / 2
+    area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+elif figure_type == "прямоугольник":
+    length = float(input("Введите длину: "))
+    width = float(input("Введите ширину: "))
+    area = length * width
+elif figure_type == "круг":
+    radius = float(input("Введите радиус: "))
+    area = 3.14 * radius ** 2
+else:
+    area = 0
+
+print(area)
+
+
+# Задача 5
+
+n = int(input("Введите количество программистов: "))
+
+if n % 10 == 1 and n % 100 != 11:
+    ending = "программист"
+elif n % 10 in [2, 3, 4] and not (n % 100 in [12, 13, 14]):
+    ending = "программиста"
+else:
+    ending = "программистов"
+
+print(f"{n} {ending}")
+
+
+# Задача 6
+
+ticket_number = input("Введите номер билета: ")
+first_half = sum(int(digit) for digit in ticket_number[:3])
+second_half = sum(int(digit) for digit in ticket_number[3:])
+
+if first_half == second_half:
+    print("Счастливый")
+else:
+    print("Несчастливый")
