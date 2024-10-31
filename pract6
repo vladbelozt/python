@@ -1,0 +1,67 @@
+#Задание 1
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+print("matrix:")
+for row in matrix:
+    print(row)
+
+odds = [num for row in matrix for num in row if num % 2 != 0]
+print("нечётные числа matrix")
+print(" ".join(map(str, odds)))
+
+evens_count = sum(1 for row in matrix for num in row if num % 2 == 0)
+print(f"кол-во чётных: {evens_count}")
+
+
+# Задание 2
+matrix_1 = [[2, 4, 3, 6], [5, 7, 1, 5]]
+matrix_2 = [[2, 9, 0, 2], [3, 4, 7, 6]]
+
+answer_matrix = [[0 for _ in range(len(matrix_1[0]))] for _ in range(len(matrix_1))]
+
+for i in range(len(matrix_1)):
+    for j in range(len(matrix_1[0])):
+        answer_matrix[i][j] = matrix_1[i][j] * matrix_2[i][j]
+
+print(answer_matrix)
+
+for row in answer_matrix:
+    row_sum = sum(row)
+    print(f"{row} сумма строки: {row_sum}")
+
+
+# Задание 3
+
+
+fruits = [['Banana', 'apple'], ['apricot', 'Avocado'], ['lime', 'lemon'], ['Mango', 'grapes']]
+uppercase_fruits = [fruit for sublist in fruits for fruit in sublist if fruit[0].isupper()]
+print(" ".join(uppercase_fruits))
+
+
+# Задание 4
+random_elements = [['toy', 'bee', 'cheese', 'ear'],
+                   [False, 'word', '0110110', 10],
+                   ['happiness', '(」°ロ°)」', 'luck', None],
+                   ['car', '<- code ->', 4.7, True]]
+
+for i, row in enumerate(random_elements):
+    for j, elem in enumerate(row):
+        if j % 2 == 1:
+            print(f"Индекс: {i}, Элемент: {elem}")
+
+
+# Задание 5
+rows = int(input("Введите количество строк: "))
+cols = int(input("Введите количество столбцов: "))
+
+matrix = []
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        value = int(input(f"Введите значение элемента [{i}][{j}]: "))
+        row.append(value)
+    matrix.append(row)
+
+print("Ваш двумерный массив:")
+for row in matrix:
+    print(row)
