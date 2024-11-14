@@ -1,0 +1,33 @@
+#Задание1
+my_dict = {1: '0101101', 2: '101110', 3: '1A14C', 4: '1100100', 5: '101010'}
+print("Начальный словарь:", my_dict)
+my_dict.pop(3) 
+print("\nСловарь после удаления ключа 3:", my_dict)
+my_dict[10] = '0100101'
+print("\nСловарь после добавления нового ключа 10:", my_dict)
+#Задание2
+sl = {'</>': 13, 'script': 1, '__init__': 10, 'self': 5, 'number_9': 6, '#comment': 100}
+print("Исходный словарь:", sl)
+new_key = input("Введите ключ: '")
+new_value = input("Введите значение: '")
+sl[new_key] = new_value  
+print("\nОбновленный словарь:", sl)
+#Задание3
+user_dict = {}
+while len(user_dict) < 3:
+    key = input("Введите ключ (числовой): ")
+
+    if key.isdigit():
+        key = int(key)
+    value = input("Введите значение: ")
+    user_dict[key] = value
+    print("Текущий словарь:", user_dict)
+
+print("\nСловарь заполнен.")
+print(user_dict)
+#Задание4
+all_d = {1: 15, 4: 80, 44: 0, 256: 15, 100: 70, 101: 70, 20: 44, 3: 9}
+for key in [1, 101, 3]:
+    if key in all_d:
+        del all_d[key]
+print("Обновленный словарь:", all_d)
