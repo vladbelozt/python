@@ -1,0 +1,83 @@
+#Задание1
+file_structure = [
+    ['folder', 'coursework.doc', 'folder', 'pict.png', 'data.accdb'],
+    ['icon.ico', 'script.js', 'index.html', 'style.css', 'prog.py'],
+    ['my_song.mp3', 'anapa-2003.jpg', 'cs_1.6.exe', 'folder', 'cheat.txt'],
+    ['notes.txt', 'main.py', 'work.pdf', 'cartoon.mp4', 'array.py'],
+    ['project.psd', 'cycle.py', 'folder', 'cycle.js', 'turtle.py']
+]
+print("Начальный список:")
+for row in file_structure:
+    print(row)
+for i in range(len(file_structure)):
+    file_structure[i] = ['data.sql' if item == 'data.accdb' else item for item in file_structure[i] if item != 'folder']
+
+print("\nБез папок и с заменой data:")
+for row in file_structure:
+    print(row)
+py_files = []
+for row in file_structure:
+    py_files.extend([item for item in row if item.endswith('.py')])
+
+print("\nВсе файлы .py:")
+print(" ".join(py_files))
+js_files = []
+for i in range(len(file_structure)):
+    new_js_files = ['new_' + item if item.endswith('.js') else item for item in file_structure[i]]
+    js_files.extend([item for item in new_js_files if item.startswith('new_')])
+
+print("\nВсе new_файлы .js:")
+print(" ".join(js_files))
+
+#Задание2
+word_numb = ["ноль", "один", "два", "три", "четыре", "пять", 
+              "шесть", "семь", "восемь", "девять"]
+
+n = int(input("Введите число n от 0 до 9: "))
+if 0 <= n <= 9:
+    for i in range(n + 1):
+        print(word_numb[i])
+else:
+    print("Введите число <= 9")
+#Задание3
+bin_sy = ['11011111', '11011101', '11000111', '11011100', '11011110']
+dec_sy = []
+for binary in bin_sy:
+    decimal = int(binary, 2) 
+    dec_sy.append(decimal)  
+    print(decimal)  
+max_num = max(dec_sy)
+min_num = min(dec_sy)
+print("Максимальное число:", max_num)
+print("Минимальное число:", min_num)
+
+#Задание4
+A = [
+    [-446, 281, -80],
+    [465, 432, -122],
+    [13, 'error', 8]
+]
+for i, row in enumerate(A):
+    for j, element in enumerate(row):
+        if isinstance(element, str):
+            A[i][j] = len(element)
+print("Исправленная матрица:")
+for row in A:
+    print(row)
+total_sum = sum(sum(row) for row in A)  
+
+print("Сумма всех элементов матрицы:", total_sum)
+
+#Задание5
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+diagonal_sum = 0
+for i in range(len(matrix)):
+    diagonal_sum += matrix[i][len(matrix) - 1 - i]
+print("Сумма по диагонали справа налево:", diagonal_sum)
+print("Ответ получился при сложении:")
+for i in range(len(matrix)):
+    print(matrix[i])
