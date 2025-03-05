@@ -1,0 +1,22 @@
+import os 
+import subprocess
+
+class GemeLauncher:
+    def __init__(self, name, patch):
+        self.name = name
+        self.patch = patch
+        
+    def run(self):
+        if  oc.pach.exists(self.patch):
+                try:
+                    
+                    subprocess.Popen(self.patch)
+                    print(f"игра{self.name} успешно запущена с пути: {self.patch}")
+                except Exception as e:
+                    print(f"ошибка при запуске игры {self.name}: {e}")
+                else:
+                    print(f"ошибка: игра {self.name} не запущенаю путь {self.patch} не найден.")
+                
+         
+        
+       
